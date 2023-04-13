@@ -34,3 +34,7 @@ table.listagem td:nth-child(3){
 .mini{
     width: 57px;
  }
+
+ .detalhes{
+    width: 100%;
+ }

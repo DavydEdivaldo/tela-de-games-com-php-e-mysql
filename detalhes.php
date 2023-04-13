@@ -8,8 +8,21 @@
     <link rel="stylesheet" href="../estudonauta-php/estilização/main.css">
 </head>
 <body>
-    <main id="idmain">
-        <h1></h1>
+    <?php 
+        require_once "../estudonauta-php/includes/banco.php";
+        require_once "../estudonauta-php/includes/functions.php";
+    ?>
+    <main id="idmain"> 
+        <?php 
+            $c = $_GET['cod']?? 0;
+        ?>
+        <h1>Detalhes do jogo</h1>
+        <table class='detalhes'>
+            <tr><td rowspan="4">foto</td></tr>
+            <td>Nome do jogo</td>
+            <tr><td>Descrição</td></tr>
+            <tr><td>Adm</td></tr>
+        </table>
     </main>
 </body>
 </html>
