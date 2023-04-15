@@ -16,7 +16,8 @@
         <h1>Escolha seu jogo</h1>
         <table class="listagem">
             <?php 
-                $busca = $banco->query('select * from jogos order by nome');
+            $p = "SELECT j.cod, j.nome, g.genero, p.produtora, j.descricao, j.nota, j.capa FROM `jogos` j JOIN generos g ON j.genero = g.cod JOIN produtoras p ON j.produtora = p.cod ";
+                $busca = $banco->query($p);
                 if(!$busca){
                     echo '<p>Erro </p>';
                 } else{
@@ -25,7 +26,12 @@
                     } else{
                         while($reg = $busca->fetch_object()){
                             $t=thumb($reg->capa);
-                           echo "<tr><td><img src='$t' class='mini'/></td><td><a href='detalhes.php? cod=$reg->cod'>$reg->nome</a></td><td>Adm</td></tr>";   
+                           echo "<tr><td><img src='$t' class='mini'/>";
+                           echo "<td><a href='detalhes.php? cod=$reg->cod'>$reg->nome</a>";
+                           echo " [$reg->genero]";
+                           echo "<br/>"  ;
+                           echo "$reg->produtora";
+                           echo "<td>Adm";
                         }
                     }
                 }
