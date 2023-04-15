@@ -15,14 +15,28 @@
     <main id="idmain"> 
         <?php 
             $c = $_GET['cod']?? 0;
+            $busca = $banco->query("select * from jogos where cod='$c'");
         ?>
         <h1>Detalhes do jogo</h1>
         <table class='detalhes'>
-            <tr><td rowspan="4">foto</td></tr>
-            <td>Nome do jogo</td>
-            <tr><td>Descrição</td></tr>
-            <tr><td>Adm</td></tr>
+            <?php 
+                if(!$busca){
+                    echo "<tr><td>busca falhou! $banco->error</td></tr>";
+                } else{
+                    if($busca-> num_rows == 1){
+                        $reg = $busca->fetch_object();
+                        $t = thumb($reg->capa);
+                        echo "<tr><td rowspan='4'><img src='$t' class='mini02'/></td></tr>";
+                        echo "<td><h2>$reg->nome</h2> Nota: ". number_format($reg->nota, 1). "/10.0";
+                        echo "<tr><td>$reg->descricao</td></tr>";
+                        echo "<tr><td>Adm</td></tr>";
+                    }else{
+                        echo "<tr><td>Nenhum registro encontrado</td></tr>";
+                    }
+                }
+            ?>  
         </table>
+        <a href="index.php"><img src="../estudonauta-php/icones/icoback.png" class="back"></a>
     </main>
 </body>
 </html>

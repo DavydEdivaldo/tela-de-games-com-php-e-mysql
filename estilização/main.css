@@ -34,7 +34,20 @@ table.listagem td:nth-child(3){
 .mini{
     width: 57px;
  }
+.mini02{
+    width: 200px;
+    height: 200px;
+ }
 
  .detalhes{
     width: 100%;
  }
+.detalhes td{
+    padding-left: 15px;
+    vertical-align: top;
+ }
+.back{
+    width: 40px;
+    height: 40px;
+    margin-top: 10px;
+}
