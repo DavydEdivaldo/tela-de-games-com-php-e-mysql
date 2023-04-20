@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title></title>
     <link rel="stylesheet" href="../estudonauta-php/estilização/main.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 </head>
 <body>
     <?php 
@@ -14,6 +15,7 @@
     ?>
     <main id="idmain"> 
         <?php 
+            include_once "../estudonauta-php/topo.php";
             $c = $_GET['cod']?? 0;
             $busca = $banco->query("select * from jogos where cod='$c'");
         ?>
@@ -36,7 +38,8 @@
                 }
             ?>  
         </table>
-        <a href="index.php"><img src="../estudonauta-php/icones/icoback.png" class="back"></a>
+        <?php echo voltar();?>
     </main>
+    <?php include "../estudonauta-php/footer.php";?>
 </body>
 </html>

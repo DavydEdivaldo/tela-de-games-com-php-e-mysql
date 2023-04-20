@@ -47,7 +47,44 @@ table.listagem td:nth-child(3){
     vertical-align: top;
  }
 .back{
-    width: 40px;
-    height: 40px;
-    margin-top: 10px;
+    margin-top: 20px;
+}
+
+footer{
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 10px;
+}
+
+header{
+    font-size: 10px;
+    text-align: right;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#busca {
+    text-align: right;
+    font-size: 10px;
+}
+
+.sucesso{
+    padding: 7px 15px;
+    margin-bottom: 15px;
+    border-radius: 15px;
+    background-color: rgba(55, 252, 65, 0.623);
+    color: green;
+}
+.aviso{
+    padding: 7px 15px;
+    margin-bottom: 15px;
+    border-radius: 15px;
+    background-color: rgba(242, 245, 60, 0.685);
+    color: rgb(102, 102, 1);
+}
+.erro{
+    padding: 7px 15px;
+    margin-bottom: 15px;
+    border-radius: 15px;
+    background-color: rgba(240, 11, 11, 0.671);
+    color: red;
 }
