@@ -11,6 +11,7 @@
 <body>
     <?php 
         require_once "../estudonauta-php/includes/banco.php";
+        require_once "../estudonauta-php/includes/login.php";
         require_once "../estudonauta-php/includes/functions.php";
         $ordem = $_GET['o'] ?? "n";
         $chave = $_GET['c'] ?? "";
